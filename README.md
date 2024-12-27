@@ -1,4 +1,4 @@
-**HeroesDek - A Marvel Superhero Search Engine**
+#HeroesDek - A Marvel Superhero Search Engine
 
 This web application allows users to search for Marvel superheroes using the Marvel API. 
 
