@@ -1,7 +1,7 @@
 // API Configuration
-const ts = "enter_timestamp";
-const publicKey = "enter_public_key";
-const hashVal = "calcualet_hashvalue";
+const ts = "1735276040308";
+const publicKey = "662865e715953027ace2d1639fb23230";
+const hashVal = "f6b2f1afadc70e8b87890c10ffc6a826";
 
 // DOM Elements
 const input = document.getElementById("input-box");
@@ -43,15 +43,15 @@ const handleAutocomplete = debounce(async (query) => {
   }
 
   const results = await fetchMarvelData(query, "nameStartsWith");
-  
+
   autocompleteList.innerHTML = "";
-  
+
   if (results.length === 0) {
     autocompleteList.innerHTML = "<div>No matches found</div>";
     return;
   }
 
-  results.forEach(result => {
+  results.forEach((result) => {
     const div = document.createElement("div");
     div.textContent = result.name;
     div.addEventListener("click", () => {
@@ -66,17 +66,18 @@ const handleAutocomplete = debounce(async (query) => {
 // Search hero function
 const searchHero = async (query) => {
   showContainer.innerHTML = '<div class="loading"><h3>Searching...</h3></div>';
-  
+
   const results = await fetchMarvelData(query, "name");
-  
+
   showContainer.innerHTML = "";
-  
+
   if (results.length === 0) {
-    showContainer.innerHTML = "<div class='no-results'><h3>No hero found!!!</h3></div>";
+    showContainer.innerHTML =
+      "<div class='no-results'><h3>No hero found!!!</h3></div>";
     return;
   }
 
-  results.forEach(character => {
+  results.forEach((character) => {
     const { name, description, thumbnail } = character;
     const imgSrc = `${thumbnail.path}.${thumbnail.extension}`;
     const desc = description || "No description available for this hero.";
@@ -90,7 +91,7 @@ const searchHero = async (query) => {
       <h2 class="character-name">${name}</h2>
       <p class="character-description">${desc}</p>
     `;
-    
+
     showContainer.appendChild(card);
   });
 };
