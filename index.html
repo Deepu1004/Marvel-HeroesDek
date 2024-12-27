@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeroesDek - Marvel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <img src="logo.jfif" alt="Marvel Logo" class="superhero-logo">
+            <h1 class="hero-title">MARVEL HEROES</h1>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <h2 class="search-title">Discover Your Favorite Superheroes</h2>
+        <div class="input-container">
+            <input type="text" id="input-box" class="input" placeholder="Type a hero name...">
+            <button id="submit-button" class="button">
+                <span class="button-text">SEARCH</span>
+            </button>
+        </div>
+        <div id="autocomplete-list" class="autocomplete-list"></div>
+    </div>
+
+    <div id="show-container" class="results-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* Variables */
+:root {
+    --color-primary: #bb1e36;
+    --color-secondary: #ffcc00;
+    --color-dark: #0d1117;
+    --color-darker: #171821;
+    --color-light: #ffffff;
+    --color-muted: #a0a0a6;
+    --glow-primary: 0 0 20px rgba(224, 26, 56, 0.5);
+    --glow-secondary: 0 0 20px rgba(255, 204, 0, 0.3);
+  }
+  
+  /* Base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: url('img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background: radial-gradient(circle at top, var(--color-dark) 0%, rgb(31, 29, 29) 100%); */
+    color: var(--color-light);
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    position: relative;
+    padding: 1em;
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
+    width: 100%;
+    overflow: hidden;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    justify-content: center;
+  }
+  
+  .superhero-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: heroFloat 5s ease-in-out infinite;
+    border: 3px solid var(--color-secondary);
+    box-shadow: var(--glow-secondary);
+  }
+  
+  .hero-title {
+    font-family: "Bangers", cursive;
+    color: var(--color-secondary);
+    font-size: 2.8em;
+    text-shadow: 3px 3px 0 var(--color-primary),
+                 6px 6px 0 rgba(0, 0, 0, 0.3);
+    letter-spacing: 4px;
+    transform: skew(-5deg);
+    animation: heroTitle 1s ease-out;
+    margin: 0;
+  }
+  
+  /* Search section */
+  .search-container {
+    padding: 2em;
+    margin: 20px auto 2em;
+    width: 90%;
+    max-width: 600px;
+    background: var(--color-darker);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+  
+  .search-title {
+    font-family: "Bangers", cursive;
+    color: var(--color-light);
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 1em;
+  }
+  
+  .input {
+    flex: 1;
+    padding: 1em 1.5em;
+    font-size: 1em;
+    background: rgba(40, 44, 52, 0.8);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    color: var(--color-light);
+    transition: all 0.3s ease;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+  }
+  
+  .button {
+    padding: 1em 2em;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-light);
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-secondary);
+  }
+
+  .autocomplete-list div {
+    margin: 5px;
+    padding: 10px;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .autocomplete-list div:hover {
+    background-color: var(--color-muted);
+    cursor: pointer;
+  }
+  
+  /* Results section */
+  .results-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    padding: 1em;
+  }
+
+  .loading,.no-results{
+    background-color: var(--color-darker);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 300%;
+    width: 40%;
+    border-radius: 20px;
+    padding: auto;
+  }
+
+  .loading h3{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+
+  .no-results h3{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+  
+  .card-container {
+    background: var(--color-darker);
+    border-radius: 20px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .container-character-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-primary);
+    box-shadow: var(--glow-primary);
+  }
+  
+  .container-character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .card-container:hover .container-character-image img {
+    transform: scale(1.2);
+  }
+  
+  .character-name {
+    font-family: "Bangers", cursive;
+    font-size: 1.8em;
+    color: var(--color-secondary);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  .character-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--color-muted);
+    text-align: center;
+  }
+  
+  /* Animations */
+  @keyframes heroFloat {
+    0%, 100% { 
+      transform: translateY(0);
+    }
+    50% { 
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes heroTitle {
+    0% { 
+      transform: translateY(-20px) skew(-5deg);
+      opacity: 0;
+    }
+    100% { 
+      transform: translateY(0) skew(-5deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-section {
+      height: auto;
+      padding: 1em 0.5em;
+    }
+  
+    .hero-content {
+      flex-direction: column;
+      gap: 0.5em;
+    }
+  
+    .hero-title {
+      font-size: 2em;
+    }
+  
+    .search-container {
+      padding: 1.5em;
+    }
+  
+    .input-container {
+      flex-direction: column;
+    }
+  
+    .button {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .superhero-logo {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .hero-title {
+      font-size: 1.8em;
+    }
+  
+    .search-title {
+      font-size: 1.2em;
+    }
+  
+    .container-character-image {
+      width: 150px;
+      height: 150px;
+    }
+  }
